@@ -6,6 +6,7 @@ import { FaShippingFast } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ReactElement } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -20,7 +21,7 @@ import Image from "next/image";
 type highlight = {
   title: string;
   description: string;
-  icon: JSX.Element;
+  icon: ReactElement;
 };
 type AllProduct = {
   id: number;
