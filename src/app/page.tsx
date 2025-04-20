@@ -112,17 +112,17 @@ export default function Home() {
 
   return (
     <div>
-      <div className="relative w-full mx-auto rounded-xl overflow-hidden mt-5">
+      <div className="relative w-full mx-auto rounded-xl overflow-hidden mt-5 px-4">
         <Carousel setApi={setApi}>
           <CarouselContent>
             {images.map((src, idx) => (
               <CarouselItem key={idx}>
-                <div className="relative h-96 w-full">
+                <div className="relative h-60 sm:h-80 md:h-96 w-full">
                   <Image
                     src={src}
                     alt={`Cover ${idx + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-xl"
                   />
                 </div>
               </CarouselItem>
@@ -136,14 +136,15 @@ export default function Home() {
             <button
               key={i}
               className={cn(
-                "w-3 h-3 rounded-full transition-all",
-                i === current ? "bg-black" : "bg-gray-400"
+                "w-3 h-3 rounded-full transition-all duration-300",
+                i === current ? "bg-black scale-110" : "bg-gray-400"
               )}
               onClick={() => api?.scrollTo(i)}
             />
           ))}
         </div>
       </div>
+
       <div className="mx-auto px-4">
         <div className="flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
@@ -191,8 +192,8 @@ export default function Home() {
                       </p>
                       <p className="text-sm text-green-600">${product.price}</p>
                       <Link href={`/product/${product.id}`} passHref>
-                        <Button className="mt-4 px-6 py-2 rounded-xl transition-all">
-                        Detail
+                        <Button className="mt-4 px-6 py-2 rounded-lg transition-all">
+                          Detail
                         </Button>
                       </Link>
                     </CardContent>
@@ -235,7 +236,7 @@ export default function Home() {
                       </p>
                       <p className="text-sm text-green-600">${item.price}</p>
                       <Link href={`/product/${item.id}`} passHref>
-                        <Button className="mt-4 px-6 py-2 rounded-xl transition-all">
+                        <Button className="mt-4 px-6 py-2 rounded-lg transition-all">
                           Detail
                         </Button>
                       </Link>
